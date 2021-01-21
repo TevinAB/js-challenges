@@ -9,12 +9,12 @@ function consecutivePairs(arr) {
 
   let temp = arr.filter((item) => typeof item === 'number');
 
-  for (let i = 0; i < temp.length - 1; i += 2) {
-    if (typeof temp[i + 1] === 'undefined') break;
-
-    let diff = temp[i] - temp[i + 1];
-    if (Math.abs(diff) === 1) count++;
-  }
+  temp.forEach((element, index) => {
+    if (typeof temp[index + 1] !== 'undefined' && index % 2 === 0) {
+      let diff = element - temp[index + 1];
+      if (Math.abs(diff) === 1) count++;
+    }
+  });
 
   return count;
 }
