@@ -1,0 +1,22 @@
+{
+  "name": "js-challenges",
+  "version": "1.0.0",
+  "description": "A repo of coding questions solved using js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TevinAB/js-challenges.git"
+  },
+  "author": "Tevin Banton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TevinAB/js-challenges/issues"
+  },
+  "homepage": "https://github.com/TevinAB/js-challenges#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
