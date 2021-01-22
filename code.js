@@ -23,8 +23,8 @@ function consecutivePairs(arr) {
 
 /*Write a function that takes two arguments, ppg (points per game) and mpg (minutes per game) and returns 
 a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Return 0 if 0.
- @ppg - points per game
- @mpg - minutes per game
+ @ ppg - points per game
+ @ mpg - minutes per game
 */
 function pointsPerGame(ppg, mpg) {
   let fullTime = 48;
@@ -33,16 +33,23 @@ function pointsPerGame(ppg, mpg) {
   return +result.toFixed(1);
 }
 
-/*Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer. Square all numbers k (0 <= k <= n)
-between 0 and n. Count the numbers of digits d used in the writing of all the k**2. Call numDig
-the function taking n and d as parameters and returning this count.
+/*Take an integer limit (limit >= 0) and a digit(0 <= digit <= 9) as an integer. Square all numbers k (0 <= k <= n)
+between 0 and limit. Count the numbers of digits [digit] used in the writing of all the k**2. Call numDig
+the function taking limit and digit as parameters and returning this count.
  @ limit - the range limit[0-limit]
  @ digit - the digit to search for
  returns the number of times this digit appeared.
 */
 function numDig(limit, digit) {
+  if (typeof limit !== 'number' || typeof digit !== 'number')
+    throw new TypeError('Limit and Digit should be numbers.');
+
+  if (digit < 0 || digit > 9)
+    throw new TypeError('Digit must be between 0-9 inclusive.');
+
   let str = '';
   let count = 0;
+  limit = limit | 0; //ensures limit is an integer.
 
   for (let i = 0; i <= limit; i++) {
     str += i ** 2;
