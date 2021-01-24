@@ -7,7 +7,8 @@ module.exports = {
 //consecutive pairs - return the number of pairs that have consecutive numbers e.g: [1,2,5,8,-4,-3,7,6,5] = 3
 function consecutivePairs(arr) {
   let count = 0;
-  if (!arr instanceof Array) return count;
+  if (!arr instanceof Array)
+    throw new TypeError('Expected Argument to be an Array');
 
   let temp = arr.filter((item) => typeof item === 'number');
 
@@ -27,8 +28,12 @@ a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Ret
  @ mpg - minutes per game
 */
 function pointsPerGame(ppg, mpg) {
-  let fullTime = 48;
+  if (typeof ppg !== 'number' || typeof mpg !== 'number')
+    throw new TypeError('Expected both arguments to be a number');
+
   if (mpg === 0) return 0;
+
+  let fullTime = 48;
   let result = (ppg / mpg) * fullTime;
   return +result.toFixed(1);
 }
