@@ -1,9 +1,3 @@
-module.exports = {
-  consecutivePairs,
-  pointsPerGame,
-  numDig,
-};
-
 //consecutive pairs - return the number of pairs that have consecutive numbers e.g: [1,2,5,8,-4,-3,7,6,5] = 3
 function consecutivePairs(arr) {
   let count = 0;
@@ -66,3 +60,23 @@ function numDig(limit, digit) {
 
   return count;
 }
+
+/*You are given a string of space separated numbers, and have to return the highest and lowest number
+  e.g: "1 2 3 4 5" give "5 1"
+ */
+function highAndLow(str) {
+  let result = '';
+
+  let arr = str.split(' ');
+  arr.sort((a, b) => b - a); //Sort in descending order.
+  result += `${arr[0]} ${arr[arr.length - 1]}`;
+
+  return result;
+}
+
+module.exports = {
+  consecutivePairs,
+  pointsPerGame,
+  numDig,
+  highAndLow,
+};
