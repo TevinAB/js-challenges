@@ -22,5 +22,5 @@ const functions = require('./code');
 //--------------------------------------Test for high and low -----------------------------------------
 
 test('Returns the highest and lowest number in a string', () => {
-  expect(functions.highAndLow('1 2 3 4 5')).toBe('5 1');
+  expect(functions.highAndLow('1 2 s 3 4 5')).toBe('5 1');
 });

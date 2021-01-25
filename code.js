@@ -69,9 +69,9 @@ function highAndLow(str) {
     throw new TypeError('Expected type of argument to be string.');
   let result = '';
 
-  let arr = str.split(' ');
+  let arr = str.split(' ').map(Number);
 
-  arr = arr.filter((value) => typeof value === 'number');
+  arr = arr.filter((value) => !isNaN(value));
 
   arr.sort((a, b) => b - a); //Sort in descending order.
   result += `${arr[0]} ${arr[arr.length - 1]}`;
