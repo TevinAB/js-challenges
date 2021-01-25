@@ -65,9 +65,14 @@ function numDig(limit, digit) {
   e.g: "1 2 3 4 5" give "5 1"
  */
 function highAndLow(str) {
+  if (typeof str !== 'string')
+    throw new TypeError('Expected type of argument to be string.');
   let result = '';
 
   let arr = str.split(' ');
+
+  arr = arr.filter((value) => typeof value === 'number');
+
   arr.sort((a, b) => b - a); //Sort in descending order.
   result += `${arr[0]} ${arr[arr.length - 1]}`;
 
