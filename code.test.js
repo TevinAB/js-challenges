@@ -21,6 +21,16 @@ const functions = require('./code');
 
 //--------------------------------------Test for high and low -----------------------------------------
 
-test('Returns the highest and lowest number in a string', () => {
-  expect(functions.highAndLow('1 2 s 3 4 5')).toBe('5 1');
+// test('Returns the highest and lowest number in a string', () => {
+//   expect(functions.highAndLow('1 2 s 3 4 5')).toBe('5 1');
+// });
+
+//--------------------------------------Test for zipWith -----------------------------------------
+test('', () => {
+  expect(functions.zipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3])).toEqual([
+    1,
+    10,
+    100,
+    1000,
+  ]);
 });

@@ -79,9 +79,34 @@ function highAndLow(str) {
   return result;
 }
 
+/**
+ *zipWith takes a function and two arrays and zips the arrays together, applying the function to every pair of 
+  values.
+  The function value is one new array.
+  If the arrays are of unequal length, the output will only be as long as the shorter one.
+  (Values of the longer array are simply not used.)
+
+  Inputs should not be modified.
+ */
+function zipWith(func, arr1, arr2) {
+  let result = [];
+  if (arr1.length < arr2.length) {
+    arr1.forEach((element, index) => {
+      result.push(func(arr1[index], arr2[index]));
+    });
+  } else {
+    arr2.forEach((element, index) => {
+      result.push(func(arr1[index], arr2[index]));
+    });
+  }
+
+  return result;
+}
+
 module.exports = {
   consecutivePairs,
   pointsPerGame,
   numDig,
   highAndLow,
+  zipWith,
 };
