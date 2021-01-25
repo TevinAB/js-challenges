@@ -26,11 +26,17 @@ const functions = require('./code');
 // });
 
 //--------------------------------------Test for zipWith -----------------------------------------
-test('', () => {
+test('Test the zip with function using Math.pow', () => {
   expect(functions.zipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3])).toEqual([
     1,
     10,
     100,
     1000,
   ]);
+});
+
+test('Test the zip with function using Math.max', () => {
+  expect(
+    functions.zipWith(Math.max, [1, 4, 7, 1, 4, 7], [4, 7, 1, 4, 7, 1])
+  ).toEqual([4, 7, 7, 4, 7, 7]);
 });

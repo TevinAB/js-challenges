@@ -89,6 +89,9 @@ function highAndLow(str) {
   Inputs should not be modified.
  */
 function zipWith(func, arr1, arr2) {
+  if (!arr1 instanceof Array || !arr2 instanceof Array)
+    throw new TypeError('Expected type of arguments arr1 & arr2 to be Array.');
+
   let result = [];
   if (arr1.length < arr2.length) {
     arr1.forEach((element, index) => {
